@@ -5,8 +5,9 @@ class profile(models.Model):
     phone = models.IntegerField()
     degree = models.CharField(max_length=200)
     school = models.CharField(max_length=200)
-    univercity = models.CharField(max_length=200)
+    university = models.CharField(max_length=200)
     skills = models.TextField()
     previous_works = models.TextField()
+    summary =models.TextField()
     def __str__(self):
         return self.name
