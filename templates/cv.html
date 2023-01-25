@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CV</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div class="container m-5 row">
+        <form method="post" class="form-group col-12 row">
+            {% csrf_token %}
+            <div class="form-group col-12 col-md-6">
+                <label class="">Name :</label>
+                <input type="text" class="form-control" name="name" id="name">
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label class="">Email :</label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label>Phone :</label>
+                <input type="number" class=" form-control" id="number" name="number">
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label>School :</label>
+                <input type="text" class="form-control" name="school" id="school">
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label>University :</label>
+                <input type="text" class="form-control" name="university" id="university">
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label>Degree :</label>
+                <input type="text" class="form-control" id="degree" name="degree">
+            </div>
+            <div class="form-group col-12">
+                <label>Skills :</label>
+                <textarea class="form-control" id="skilld" name="skills"></textarea>
+            </div>
+            <div class="form-group col-12">
+                <label>Previous Works :</label>
+                <textarea class="form-control" id="works" name="works"></textarea>
+            </div>
+            <button type="submit" class="btn btn-outline-primary col-4 offset-4">Generate CV</button>
+        </form>
+    </div>
+<script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>
