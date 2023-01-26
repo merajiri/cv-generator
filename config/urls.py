@@ -19,4 +19,5 @@ from pdf import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",views.cvview),
+    path("<int:pk>",views.resume),
 ]

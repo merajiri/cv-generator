@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <style>
+        p{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h1 class="text-danger">{{ profile.name }}</h1>
+<h1 class="text-primary">{{ profile.email }}</h1>
+<h1>{{ profile.phone }}</h1>
+<hr><br>
+<p>summary</p>
+<p>{{ profile.summary }}</p>
+<p>skills</p>
+<p>{{ profile.skills }}</p>
+<p>previous works</p>
+<p>{{ profile.previous_works }}</p>
+<p>educations</p>
+<ul>
+    <li>{{ profile.degree }}</li>
+    <li>{{ profile.university }}</li>
+    <li>{{ profile.school }}</li>
+</ul>
+</body>
+</html>

@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from pdf import models
+from django.http import HttpResponse
+from pdf.process import html_to_pdf
 def cvview(request):
     if request.method =="POST" :
         name = request.POST.get("name")
@@ -15,3 +17,7 @@ def cvview(request):
         university=university,degree=degree,previous_works=works,skills=skills)
         PDF.save()
     return render(request,"cv.html")
+def resume(request,pk):
+    Profile = models.profile.objects.get(pk=pk)
+    data = html_to_pdf("resume.html",{"profile":Profile})
+    return HttpResponse(data,content_type="application/pdf")
